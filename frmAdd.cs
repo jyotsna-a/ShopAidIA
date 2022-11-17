@@ -63,7 +63,7 @@ namespace ShopAid
             ItemsModel i = new ItemsModel(name, p, priority);
             WishListModel.addItem(i);
 
-            MessageBox.Show(this, "Item added", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private bool ValidateItems()
@@ -83,7 +83,7 @@ namespace ShopAid
 
             if (!passed)
             {
-                MessageBox.Show(this, "Price must be numeric!", TitlesModel.MessageBoxTitle,
+                MessageBox.Show(this, "Price MUST be numeric!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
