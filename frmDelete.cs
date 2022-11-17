@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAid.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,14 +12,16 @@ using System.Windows.Forms;
 
 namespace ShopAid
 {
-    public partial class frmLogin : Form
+    public partial class frmDelete : Form
     {
-        public frmLogin()
+        public List<ItemsModel> items { get; set; }
+
+        public frmDelete()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void frmDelete_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
             this.SetControls();
@@ -32,7 +35,12 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadHome));

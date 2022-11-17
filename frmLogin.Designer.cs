@@ -29,7 +29,7 @@ namespace ShopAid
         /// </summary>
         private void InitializeComponent()
         {
-            this.Title = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
@@ -37,16 +37,16 @@ namespace ShopAid
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Title
+            // lblTitle
             // 
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(235, 36);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(97, 24);
-            this.Title.TabIndex = 0;
-            this.Title.Text = "ShopAid";
-            this.Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(235, 36);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(97, 24);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "ShopAid";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtUsername
             // 
@@ -84,7 +84,8 @@ namespace ShopAid
             // 
             this.btnLogin.AutoEllipsis = true;
             this.btnLogin.BackColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.ForeColor = System.Drawing.Color.Snow;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Location = new System.Drawing.Point(258, 210);
             this.btnLogin.Name = "btnLogin";
@@ -105,7 +106,7 @@ namespace ShopAid
             this.Controls.Add(this.Username);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.Title);
+            this.Controls.Add(this.lblTitle);
             this.Name = "frmLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -116,7 +117,7 @@ namespace ShopAid
 
         #endregion
 
-        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label Username;
