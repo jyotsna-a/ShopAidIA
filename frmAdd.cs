@@ -60,6 +60,7 @@ namespace ShopAid
             double p = price;
             int priority = (int)numPriority.Value;
 
+            //creates item using user input
             ItemsModel i = new ItemsModel(name, p, priority);
             WishListModel.addItem(i);
 
