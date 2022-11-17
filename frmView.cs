@@ -14,7 +14,7 @@ namespace ShopAid
 {
     public partial class frmView : Form
     {
-        public List<ItemsModel> items { get; set; }
+        public List<ItemsModel> items;
 
         public frmView()
         {
@@ -26,11 +26,14 @@ namespace ShopAid
             this.CenterToScreen();
             this.SetControls();
 
-            items = frmAdd.items;
-
+            items = WishListModel.itemsArray();
+            int x = 70;
+            int y = 70;
             foreach (ItemsModel i in items)
-                Console.Write(i.Name);
-            Console.WriteLine();
+            {
+                this.Controls.Add(WishListModel.viewWishlist(i, x, y));
+                y += 20;
+            }      
         }
 
         private void SetControls()

@@ -14,7 +14,7 @@ namespace ShopAid
 {
     public partial class frmAdd : Form
     {
-        public static List<ItemsModel> items = new List<ItemsModel>();
+        public List<ItemsModel> items { get; set; }
         double price = 0;
 
         public frmAdd()
@@ -26,13 +26,6 @@ namespace ShopAid
         {
             this.CenterToScreen();
             this.SetControls();
-            frmDelete export = new frmDelete();
-            export.items = items;
-            export.Show();
-
-            frmView export1 = new frmView();
-            export1.items = items;
-            export1.Show();
         }
 
         private void SetControls()
@@ -61,12 +54,12 @@ namespace ShopAid
             if (!ValidateItems())
                 return;
 
-            items.Add(new ItemsModel()
-            {
-                Name = this.txtName.Text.Trim(),
-                Price = price,
-                Priority = (int)numPriority.Value
-            });
+            string name = this.txtName.Text.Trim();
+            double p = price;
+            int priority = (int)numPriority.Value;
+
+            ItemsModel i = new ItemsModel(name, p, priority);
+            WishListModel.addItem(i);
 
             MessageBox.Show(this, "Item added", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
