@@ -17,11 +17,13 @@ namespace ShopAid.Models
 
         }
 
+        //adds an item to the items arraylist
         public static void addItem(ItemsModel i)
         {
-            items.Add(i);
+            items.Insert(i.Priority, i);
         }
 
+        //creates a label for an item
         public static Label viewWishlist(ItemsModel i, int x, int y)
         {
             Label n = new Label();
@@ -31,6 +33,7 @@ namespace ShopAid.Models
             return n;
         }
 
+        //returns the items array
         public static List<ItemsModel> itemsArray()
         {
             return items;

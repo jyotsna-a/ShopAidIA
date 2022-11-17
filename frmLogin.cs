@@ -32,6 +32,7 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
+        //threads to homepage
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Close();

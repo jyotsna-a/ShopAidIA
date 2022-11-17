@@ -21,6 +21,7 @@ namespace ShopAid
             InitializeComponent();
         }
 
+        //prints the label for each item in items
         private void frmView_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
@@ -44,6 +45,7 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
+        //closes the form
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -32,6 +32,7 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
+        //threads to add page
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,6 +46,7 @@ namespace ShopAid
             Application.Run(new frmAdd());
         }
 
+        //threads to delete page
         private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,6 +60,7 @@ namespace ShopAid
             Application.Run(new frmDelete());
         }
 
+        //threads to priority page
         private void btnPriority_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -71,6 +74,7 @@ namespace ShopAid
             Application.Run(new frmPriority());
         }
 
+        //threads to view page
         private void btnView_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,6 +88,7 @@ namespace ShopAid
             Application.Run(new frmView());
         }
 
+        //threads to edit page
         private void btnEdit_Click(object sender, EventArgs e)
         {
             this.Close();
