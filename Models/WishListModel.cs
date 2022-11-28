@@ -40,10 +40,19 @@ namespace ShopAid.Models
             return items;
         }
 
-        public static void deleteItem(string name)
+        public static string deleteItem(string name)
         {
-            
-            setPriorities();
+            foreach (ItemsModel i in items)
+            {
+                if (i.Name.Equals(name))
+                {
+                    items.Remove(i);
+                    setPriorities();
+                    return "Item deleted";
+                }
+            }
+
+            return "Item not found";
         }
 
         public static void setPriorities()

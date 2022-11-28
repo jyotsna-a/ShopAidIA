@@ -44,9 +44,9 @@ namespace ShopAid
             //creates item using user input
             string name = this.txtName.Text.Trim();
 
-            //deletes item
-            WishListModel.deleteItem(name);
-            MessageBox.Show(this, "Item deleted.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //deletes item and returns success/failure message
+            string msg = WishListModel.deleteItem(name);
+            MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private bool ValidateItems()
@@ -55,18 +55,6 @@ namespace ShopAid
             if (String.IsNullOrEmpty(this.txtName.Text.Trim()))
             {
                 MessageBox.Show(this, "Item MUST have a name!", TitlesModel.MessageBoxTitle,
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
-            //validate Price is numeric
-            bool passed = false;
-
-            passed = double.TryParse(this.txtPrice.Text.Trim(), out price);
-
-            if (!passed)
-            {
-                MessageBox.Show(this, "Price MUST be numeric!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
