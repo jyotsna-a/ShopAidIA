@@ -35,15 +35,43 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
+        // validates item and calls delete method in WishListModel
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (!ValidateItems())
+                return;
+
             //creates item using user input
             string name = this.txtName.Text.Trim();
-            ItemsModel i = new ItemsModel(name);
 
             //deletes item
-            WishListModel.deleteItem(i);
-            MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            WishListModel.deleteItem(name);
+            MessageBox.Show(this, "Item deleted.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private bool ValidateItems()
+        {
+            //Validate Name is entered
+            if (String.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                MessageBox.Show(this, "Item MUST have a name!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            //validate Price is numeric
+            bool passed = false;
+
+            passed = double.TryParse(this.txtPrice.Text.Trim(), out price);
+
+            if (!passed)
+            {
+                MessageBox.Show(this, "Price MUST be numeric!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         //closes the form

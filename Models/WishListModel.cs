@@ -21,6 +21,7 @@ namespace ShopAid.Models
         public static void addItem(ItemsModel i)
         {
             items.Insert(i.Priority, i);
+            setPriorities();
         }
 
         //creates a label for an item
@@ -39,9 +40,9 @@ namespace ShopAid.Models
             return items;
         }
 
-        public static void deleteItem(ItemsModel i)
+        public static void deleteItem(string name)
         {
-            items.Remove(i);
+            
             setPriorities();
         }
 
