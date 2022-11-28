@@ -38,5 +38,20 @@ namespace ShopAid.Models
         {
             return items;
         }
+
+        public static void deleteItem(ItemsModel i)
+        {
+            items.Remove(i);
+            setPriorities();
+        }
+
+        public static void setPriorities()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                items[i].setPriority(i);
+            }
+
+        }
     }
 }

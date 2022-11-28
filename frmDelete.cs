@@ -37,7 +37,13 @@ namespace ShopAid
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            //creates item using user input
+            string name = this.txtName.Text.Trim();
+            ItemsModel i = new ItemsModel(name);
+
+            //deletes item
+            WishListModel.deleteItem(i);
+            MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         //closes the form
