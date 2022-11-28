@@ -57,9 +57,9 @@ namespace ShopAid.Models
 
         public static void setPriorities()
         {
-            for (int i = 0; i < items.Count; i++)
+            for (int item = 0; item < items.Count; item++)
             {
-                items[i].setPriority(i);
+                items[item].setPriority(item);
             }
 
         }
