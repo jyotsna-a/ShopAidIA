@@ -29,8 +29,10 @@ namespace ShopAid
 
             lblBudget = new Label();
             lblBudget.Location = new Point(65, 150);
-            //lblBudget.Size = new Size(100, 100);
-            lblBudget.Text = budget.ToString();
+            lblBudget.AutoSize = true;
+            Font template = new Font("Microsoft Sans Serif", 50);
+            lblBudget.Font = template;
+            lblBudget.Text = "$" + budget.ToString();
         }
 
         private bool ValidateItems()
