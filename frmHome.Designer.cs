@@ -51,9 +51,10 @@ namespace ShopAid
             // lblBudget
             // 
             this.lblBudget.AutoSize = true;
-            this.lblBudget.Location = new System.Drawing.Point(57, 106);
+            this.lblBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBudget.Location = new System.Drawing.Point(66, 98);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(74, 13);
+            this.lblBudget.Size = new System.Drawing.Size(183, 31);
             this.lblBudget.TabIndex = 1;
             this.lblBudget.Text = "MY BUDGET:";
             // 
@@ -113,7 +114,7 @@ namespace ShopAid
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Location = new System.Drawing.Point(362, 222);

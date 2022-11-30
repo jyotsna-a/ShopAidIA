@@ -27,8 +27,9 @@ namespace ShopAid
                 return;
             MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            //initializes the label variable for the budget with corret style
             lblBudget = new Label();
-            lblBudget.Location = new Point(65, 150);
+            lblBudget.Location = new Point(65, 130);
             lblBudget.AutoSize = true;
             Font template = new Font("Microsoft Sans Serif", 50);
             lblBudget.Font = template;
