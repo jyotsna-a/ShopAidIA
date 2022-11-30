@@ -20,7 +20,7 @@ namespace ShopAid.Models
         //adds an item to the items arraylist
         public static void addItem(ItemsModel i)
         {
-            items.Insert(i.Priority, i);
+            items.Insert(i.Priority - 1, i);
             setPriorities();
         }
 
@@ -79,7 +79,7 @@ namespace ShopAid.Models
             if (temp != null)
             {
                 temp.Priority = p;
-                items.Insert(p, temp);
+                items.Insert((p - 1), temp);
                 setPriorities();
 
                 //returns success message
@@ -96,7 +96,7 @@ namespace ShopAid.Models
         {
             for (int item = 0; item < items.Count; item++)
             {
-                items[item].setPriority(item);
+                items[item].setPriority(item + 1);
             }
 
         }

@@ -112,9 +112,19 @@ namespace ShopAid
             // numNewPriority
             // 
             this.numNewPriority.Location = new System.Drawing.Point(222, 139);
+            this.numNewPriority.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numNewPriority.Name = "numNewPriority";
             this.numNewPriority.Size = new System.Drawing.Size(120, 20);
             this.numNewPriority.TabIndex = 24;
+            this.numNewPriority.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmPriority
             // 
