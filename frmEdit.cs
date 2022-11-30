@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAid.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace ShopAid
 {
     public partial class frmEdit : Form
     {
+        public static double budget = 0;
+        public static Label lblBudget { get; set; }
         public frmEdit()
         {
             InitializeComponent();
@@ -20,7 +23,31 @@ namespace ShopAid
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (!ValidateItems())
+                return;
+            MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            lblBudget = new Label();
+            lblBudget.Location = new Point(65, 150);
+            //lblBudget.Size = new Size(100, 100);
+            lblBudget.Text = budget.ToString();
+        }
+
+        private bool ValidateItems()
+        {
+            //validate Price is numeric
+            bool passed = false;
+
+            passed = double.TryParse(this.txtNew.Text.Trim(), out budget);
+
+            if (!passed)
+            {
+                MessageBox.Show(this, "Price MUST be numeric!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         //closes the form

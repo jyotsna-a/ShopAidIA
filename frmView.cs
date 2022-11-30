@@ -39,9 +39,6 @@ namespace ShopAid
                 this.Controls.Add(WishListModel.viewWishlist(i, x, y));
                 y += 20;
             }
-
-            string s = WishListModel.sumPrices(items, items.Count()).ToString();
-            Console.WriteLine(s);
         }
 
         private void SetControls()

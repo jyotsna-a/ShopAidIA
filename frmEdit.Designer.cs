@@ -33,7 +33,7 @@ namespace ShopAid
             this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblNew = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNew = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblEdit
@@ -81,12 +81,12 @@ namespace ShopAid
             this.lblNew.TabIndex = 18;
             this.lblNew.Text = "New Budget";
             // 
-            // txtName
+            // txtNew
             // 
-            this.txtName.Location = new System.Drawing.Point(221, 97);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(120, 20);
-            this.txtName.TabIndex = 17;
+            this.txtNew.Location = new System.Drawing.Point(221, 97);
+            this.txtNew.Name = "txtNew";
+            this.txtNew.Size = new System.Drawing.Size(120, 20);
+            this.txtNew.TabIndex = 17;
             // 
             // frmEdit
             // 
@@ -97,7 +97,7 @@ namespace ShopAid
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.lblNew);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtNew);
             this.Controls.Add(this.lblEdit);
             this.Name = "frmEdit";
             this.Text = "frmEdit";
@@ -113,6 +113,6 @@ namespace ShopAid
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblNew;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNew;
     }
 }

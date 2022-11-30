@@ -22,6 +22,7 @@ namespace ShopAid
         {
             this.CenterToScreen();
             this.SetControls();
+            this.Controls.Add(frmEdit.lblBudget);
         }
 
         private void SetControls()
