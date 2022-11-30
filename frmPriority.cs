@@ -21,6 +21,7 @@ namespace ShopAid
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+            //checks validation
             if (!ValidateItems())
                 return;
 
@@ -28,7 +29,7 @@ namespace ShopAid
             string name = this.txtName.Text.Trim();
             int p = (int)numNewPriority.Value;
 
-            //changes priority and returns success/failure message
+            //changes priority and returns success/fail message
             string msg = WishListModel.changePriority(name, p);
             MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

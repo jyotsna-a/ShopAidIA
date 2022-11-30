@@ -28,8 +28,12 @@ namespace ShopAid
             this.SetControls();
 
             items = WishListModel.itemsArray();
+
+            //initializes variables for label location
             int x = 70;
             int y = 70;
+            
+            //prints out each label under the previous one
             foreach (ItemsModel i in items)
             {
                 this.Controls.Add(WishListModel.viewWishlist(i, x, y));

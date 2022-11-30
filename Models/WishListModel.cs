@@ -43,6 +43,7 @@ namespace ShopAid.Models
         //method to delete an item, returns a success/fail message
         public static string deleteItem(string name)
         {
+            //checks if item is in array
             foreach (ItemsModel i in items)
             {
                 if (i.Name.Equals(name))
@@ -53,13 +54,17 @@ namespace ShopAid.Models
                 }
             }
 
+            //returns fail message
             return "Item not found";
         }
 
+        //changes the priority of an item
         public static string changePriority(string name, int p)
         {
+            //creates a temporary ItemsModel
             ItemsModel temp = null;
 
+            //checks if item is in array
             foreach (ItemsModel i in items)
             {
                 if (i.Name.Equals(name))
@@ -70,14 +75,18 @@ namespace ShopAid.Models
                 }
             }
 
+            //checks if an item was assigned to the temporary ItemsModel
             if (temp != null)
             {
                 temp.Priority = p;
                 items.Insert(p, temp);
                 setPriorities();
+
+                //returns success message
                 return "Priority changed.";
             }
-
+            
+            //returns fail message
             return "Item not found.";
 
         }

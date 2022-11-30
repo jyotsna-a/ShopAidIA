@@ -56,7 +56,7 @@ namespace ShopAid
 
         private void ThreadDelete()
         {
-            //RUNs a NEW application with the desired form
+            //runs a new form
             Application.Run(new frmDelete());
         }
 
