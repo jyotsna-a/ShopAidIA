@@ -46,12 +46,13 @@ namespace ShopAid
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClose.Location = new System.Drawing.Point(466, 258);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(86, 23);
             this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "Close Form";
+            this.btnClose.Text = "CLOSE FORM";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 

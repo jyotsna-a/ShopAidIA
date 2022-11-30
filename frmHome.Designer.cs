@@ -53,55 +53,60 @@ namespace ShopAid
             this.lblBudget.AutoSize = true;
             this.lblBudget.Location = new System.Drawing.Point(57, 106);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(61, 13);
+            this.lblBudget.Size = new System.Drawing.Size(74, 13);
             this.lblBudget.TabIndex = 1;
-            this.lblBudget.Text = "My Budget:";
+            this.lblBudget.Text = "MY BUDGET:";
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.CausesValidation = false;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Location = new System.Drawing.Point(362, 106);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(102, 23);
+            this.btnAdd.Size = new System.Drawing.Size(122, 23);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Add Item";
+            this.btnAdd.Text = "ADD ITEM";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Location = new System.Drawing.Point(362, 135);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(102, 23);
+            this.btnDelete.Size = new System.Drawing.Size(122, 23);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Delete Item";
+            this.btnDelete.Text = "DELETE ITEM";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnPriority
             // 
             this.btnPriority.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriority.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPriority.Location = new System.Drawing.Point(362, 164);
             this.btnPriority.Name = "btnPriority";
-            this.btnPriority.Size = new System.Drawing.Size(102, 23);
+            this.btnPriority.Size = new System.Drawing.Size(122, 23);
             this.btnPriority.TabIndex = 4;
-            this.btnPriority.Text = "Change Priority";
+            this.btnPriority.Text = "CHANGE PRIORITY";
             this.btnPriority.UseVisualStyleBackColor = false;
             this.btnPriority.Click += new System.EventHandler(this.btnPriority_Click);
             // 
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnView.Location = new System.Drawing.Point(362, 193);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(102, 23);
+            this.btnView.Size = new System.Drawing.Size(122, 23);
             this.btnView.TabIndex = 5;
-            this.btnView.Text = "View Wishlist";
+            this.btnView.Text = "VIEW WISHLIST";
             this.btnView.UseVisualStyleBackColor = false;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
@@ -109,12 +114,13 @@ namespace ShopAid
             // 
             this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.Location = new System.Drawing.Point(362, 222);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(102, 23);
+            this.btnEdit.Size = new System.Drawing.Size(122, 23);
             this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Edit Budget";
+            this.btnEdit.Text = "EDIT BUDGET";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 

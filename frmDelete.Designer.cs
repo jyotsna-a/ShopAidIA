@@ -40,6 +40,7 @@ namespace ShopAid
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Location = new System.Drawing.Point(272, 138);
             this.btnDelete.Name = "btnDelete";
@@ -86,6 +87,7 @@ namespace ShopAid
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClose.Location = new System.Drawing.Point(466, 276);
             this.btnClose.Name = "btnClose";

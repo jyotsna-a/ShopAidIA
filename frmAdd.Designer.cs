@@ -102,6 +102,7 @@ namespace ShopAid
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Location = new System.Drawing.Point(255, 218);
             this.btnAdd.Name = "btnAdd";
@@ -114,6 +115,7 @@ namespace ShopAid
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnClose.Location = new System.Drawing.Point(485, 276);
             this.btnClose.Name = "btnClose";

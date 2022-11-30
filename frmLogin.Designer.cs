@@ -85,6 +85,7 @@ namespace ShopAid
             this.btnLogin.AutoEllipsis = true;
             this.btnLogin.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Location = new System.Drawing.Point(258, 210);

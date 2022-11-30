@@ -46,7 +46,7 @@ namespace ShopAid
             Application.Run(new frmAdd());
         }
 
-        //threads to delete page
+        //threads to the delete page
         private void btnDelete_Click(object sender, EventArgs e)
         {
             this.Close();
