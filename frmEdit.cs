@@ -14,7 +14,7 @@ namespace ShopAid
 {
     public partial class frmEdit : Form
     {
-        public static double budget = 0;
+        public double budget { get; }
         public static Label lblBudget { get; set; }
         public frmEdit()
         {
