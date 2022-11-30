@@ -100,5 +100,18 @@ namespace ShopAid.Models
             }
 
         }
+
+        public static double sumPrices(List<ItemsModel> i, int n)
+        {
+            //recursive method to sum the prices of all items
+            if (n < 1)
+            {
+                return 0;
+            }
+            else
+            {
+                return i[n - 1].Price + sumPrices(i, n - 1);
+            }         
+        }
     }
 }
