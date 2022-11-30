@@ -41,7 +41,7 @@ namespace ShopAid
             if (!ValidateItems())
                 return;
 
-            //creates item using user input
+            //creates string for name using user input
             string name = this.txtName.Text.Trim();
 
             //deletes item and returns success/failure message

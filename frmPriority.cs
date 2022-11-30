@@ -24,11 +24,11 @@ namespace ShopAid
             if (!ValidateItems())
                 return;
 
-            //creates item using user input
+            //creates variables using user input
             string name = this.txtName.Text.Trim();
             int p = (int)numNewPriority.Value;
 
-            //deletes item and returns success/failure message
+            //changes priority and returns success/failure message
             string msg = WishListModel.changePriority(name, p);
             MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

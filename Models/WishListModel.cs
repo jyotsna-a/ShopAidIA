@@ -58,7 +58,7 @@ namespace ShopAid.Models
 
         public static string changePriority(string name, int p)
         {
-            ItemsModel temp = new ItemsModel();
+            ItemsModel temp = null;
 
             foreach (ItemsModel i in items)
             {
@@ -70,7 +70,16 @@ namespace ShopAid.Models
                 }
             }
 
-            return "Priority changed.";
+            if (temp != null)
+            {
+                temp.Priority = p;
+                items.Insert(p, temp);
+                setPriorities();
+                return "Priority changed.";
+            }
+
+            return "Item not found.";
+
         }
 
         //updates priorities each time a change is made to the arraylist
