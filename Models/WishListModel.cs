@@ -40,6 +40,7 @@ namespace ShopAid.Models
             return items;
         }
 
+        //method to delete an item, returns a success/fail message
         public static string deleteItem(string name)
         {
             foreach (ItemsModel i in items)
@@ -55,6 +56,24 @@ namespace ShopAid.Models
             return "Item not found";
         }
 
+        public static string changePriority(string name, int p)
+        {
+            ItemsModel temp = new ItemsModel();
+
+            foreach (ItemsModel i in items)
+            {
+                if (i.Name.Equals(name))
+                {
+                    temp = i;
+                    items.Remove(i);
+                    break;
+                }
+            }
+
+            return "Priority changed.";
+        }
+
+        //updates priorities each time a change is made to the arraylist
         public static void setPriorities()
         {
             for (int item = 0; item < items.Count; item++)

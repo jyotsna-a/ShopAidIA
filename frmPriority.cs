@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAid.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,29 @@ namespace ShopAid
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+            if (!ValidateItems())
+                return;
 
+            //creates item using user input
+            string name = this.txtName.Text.Trim();
+            int p = (int)numNewPriority.Value;
+
+            //deletes item and returns success/failure message
+            string msg = WishListModel.changePriority(name, p);
+            MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private bool ValidateItems()
+        {
+            //Validate Name is entered
+            if (String.IsNullOrEmpty(this.txtName.Text.Trim()))
+            {
+                MessageBox.Show(this, "Item MUST have a name!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         //closes the form

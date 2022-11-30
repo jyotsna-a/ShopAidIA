@@ -24,11 +24,6 @@ namespace ShopAid.Models
             Priority = priority;
         }
 
-        public ItemsModel(string name)
-        {
-            Name = name;
-        }
-
         public void setPriority(int i)
         {
             this.Priority = i;

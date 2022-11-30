@@ -36,7 +36,8 @@ namespace ShopAid
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblNew = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numNewPriority = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numNewPriority)).BeginInit();
             this.SuspendLayout();
             // 
             // lblChange
@@ -100,18 +101,18 @@ namespace ShopAid
             // lblNew
             // 
             this.lblNew.AutoSize = true;
-            this.lblNew.Location = new System.Drawing.Point(219, 121);
+            this.lblNew.Location = new System.Drawing.Point(219, 123);
             this.lblNew.Name = "lblNew";
             this.lblNew.Size = new System.Drawing.Size(93, 13);
             this.lblNew.TabIndex = 23;
             this.lblNew.Text = "New Priority Value";
             // 
-            // textBox1
+            // numNewPriority
             // 
-            this.textBox1.Location = new System.Drawing.Point(222, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 22;
+            this.numNewPriority.Location = new System.Drawing.Point(222, 139);
+            this.numNewPriority.Name = "numNewPriority";
+            this.numNewPriority.Size = new System.Drawing.Size(120, 20);
+            this.numNewPriority.TabIndex = 24;
             // 
             // frmPriority
             // 
@@ -119,8 +120,8 @@ namespace ShopAid
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 311);
+            this.Controls.Add(this.numNewPriority);
             this.Controls.Add(this.lblNew);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.lblPrice);
@@ -130,6 +131,7 @@ namespace ShopAid
             this.Name = "frmPriority";
             this.Text = "frmPriority";
             this.Load += new System.EventHandler(this.frmPriority_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numNewPriority)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +146,6 @@ namespace ShopAid
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblNew;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numNewPriority;
     }
 }
