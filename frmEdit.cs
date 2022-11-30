@@ -21,8 +21,10 @@ namespace ShopAid
             InitializeComponent();
         }
 
+        //Updates the budget and label used in homepage
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            //checks validation
             if (!ValidateItems())
                 return;
             MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
