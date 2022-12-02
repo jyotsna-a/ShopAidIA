@@ -30,7 +30,7 @@ namespace ShopAid.Models
             Label n = new Label();
             n.Location = new Point(x,y);
             n.AutoSize = true;
-            n.Text = i.Name + "     Priority: " + i.Priority.ToString();
+            n.Text = i.Name + "     Priority: " + i.Priority.ToString() + "                   Price: " + i.Price.ToString();
             return n;
         }
 

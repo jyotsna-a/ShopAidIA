@@ -14,7 +14,7 @@ namespace ShopAid
 {
     public partial class frmEdit : Form
     {
-        public double budget { get; }
+        public double budget { get; set; }
         public static Label lblBudget { get; set; }
         public frmEdit()
         {
@@ -43,7 +43,12 @@ namespace ShopAid
             //validate Price is numeric
             bool passed = false;
 
-            passed = double.TryParse(this.txtNew.Text.Trim(), out budget);
+            double temp = 0;
+
+            passed = double.TryParse(this.txtNew.Text.Trim(), out temp);
+
+            budget = temp;
+
 
             if (!passed)
             {
