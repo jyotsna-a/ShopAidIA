@@ -89,6 +89,15 @@ namespace ShopAid
                 return false;
             }
 
+            //validate Price fits budget
+            double db = price;
+            if (!WishListModel.checkBudget(double.Parse(this.txtPrice.Text.Trim())))
+            {
+                MessageBox.Show(this, "This price exceeds your budget!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
             return true;
         }
     }

@@ -14,8 +14,8 @@ namespace ShopAid
 {
     public partial class frmEdit : Form
     {
-        public double budget { get; set; }
-        public static Label lblBudget { get; set; }
+        public static double budget { get; set; }
+        public static Label lblBudget = new Label();
         public frmEdit()
         {
             InitializeComponent();
@@ -30,12 +30,19 @@ namespace ShopAid
             MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             //initializes the label variable for the budget with corret style
-            lblBudget = new Label();
-            lblBudget.Location = new Point(65, 130);
-            lblBudget.AutoSize = true;
-            Font template = new Font("Microsoft Sans Serif", 50);
-            lblBudget.Font = template;
-            lblBudget.Text = "$" + budget.ToString();
+            //lblBudget = this.createLabel();
+            
+        }
+
+        public static Label createLabel()
+        {
+            Label lbl = new Label();
+            lbl.Location = new Point(65, 130);
+            lbl.AutoSize = true;
+            Font template = new Font("Microsoft Sans Serif", 30);
+            lbl.Font = template;
+            lbl.Text = "$" + budget.ToString();
+            return lbl;
         }
 
         private bool ValidateItems()

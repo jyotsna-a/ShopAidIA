@@ -113,5 +113,15 @@ namespace ShopAid.Models
                 return i[n - 1].Price + sumPrices(i, n - 1);
             }         
         }
+
+        public static bool checkBudget(double b)
+        {
+            if (b + sumPrices(items, items.Count) <= frmEdit.budget)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
