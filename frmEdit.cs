@@ -15,25 +15,12 @@ namespace ShopAid
     public partial class frmEdit : Form
     {
         public static double budget { get; set; }
-        public static Label lblBudget = new Label();
         public frmEdit()
         {
             InitializeComponent();
         }
 
-        //Updates the budget and label used in homepage
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            //checks validation
-            if (!ValidateItems())
-                return;
-            MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //initializes the label variable for the budget with corret style
-            //lblBudget = this.createLabel();
-            
-        }
-
+        //creates budget label to return to homepage
         public static Label createLabel()
         {
             Label lbl = new Label();
@@ -43,6 +30,15 @@ namespace ShopAid
             lbl.Font = template;
             lbl.Text = "$" + budget.ToString();
             return lbl;
+        }
+
+        //Updates the budget and label used in homepage
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //checks validation
+            if (!ValidateItems())
+                return;
+            MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
 
         private bool ValidateItems()
@@ -64,6 +60,13 @@ namespace ShopAid
                 return false;
             }
 
+            //validates if budget is enough for current items
+            if (!WishListModel.checkBudget(0))
+            {
+                MessageBox.Show(this, "Budget is too low for current wishlist. Please delete items.", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
