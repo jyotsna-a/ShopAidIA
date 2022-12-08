@@ -26,19 +26,6 @@ namespace ShopAid
         {
             this.CenterToScreen();
             this.SetControls();
-
-            items = WishListModel.itemsArray();
-
-            //initializes variables for label location
-            int x = 70;
-            int y = 70;
-            
-            //prints out each label under the previous one
-            foreach (ItemsModel i in items)
-            {
-                this.Controls.Add(WishListModel.viewWishlist(i, x, y));
-                y += 20;
-            }
         }
 
         private void SetControls()
@@ -61,6 +48,24 @@ namespace ShopAid
         {
             //RUNs a NEW application with the desired form
             Application.Run(new frmHome());
+        }
+
+        private void btnOrderPriority_Click(object sender, EventArgs e)
+        {
+            items = WishListModel.itemsArray();
+
+            //adds each item to the datagrid in the order of priority
+            foreach (ItemsModel i in items)
+            {
+                Object[] row = new Object[] {i.Name, i.Priority, i.Price};
+                dgWishlist.Rows.Add(row);
+            }
+        }
+
+        private void btnOrderPrice_Click(object sender, EventArgs e)
+        {
+            items = WishListModel.itemsArray();
+
         }
     }
 }
