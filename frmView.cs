@@ -38,6 +38,7 @@ namespace ShopAid
 
         private void btnOrderPriority_Click(object sender, EventArgs e)
         {
+            dgWishlist.Rows.Clear();
             items = WishListModel.itemsArray();
 
             //adds each item to the datagrid in the order of priority
@@ -50,16 +51,36 @@ namespace ShopAid
 
         private void btnOrderPrice_Click(object sender, EventArgs e)
         {
-            items = WishListModel.itemsArray();
+            dgWishlist.Rows.Clear();
+            List<ItemsModel> sortedItems = mergeSortPrice(WishListModel.itemsArray());
 
+            foreach (ItemsModel i in sortedItems)
+            {
+                Object[] row = new Object[] { i.Name, i.Priority, i.Price };
+                dgWishlist.Rows.Add(row);
+            }
         }
 
+        //recursive merge sort: https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-7.php#:~:text=Conceptually%2C%20a%20merge%20sort%20works,will%20be%20the%20sorted%20list.
         private List<ItemsModel> mergeSortPrice(List<ItemsModel> list)
         {
+            if (list.Count <= 1)
+                return list;
 
-            return list;
+            List<ItemsModel> a = new List<ItemsModel>();
+            List<ItemsModel> b = new List<ItemsModel>();
+
+            int mid = list.Count / 2;
+            a = list.GetRange(0, mid);
+            b = list.GetRange(mid, (int)Math.Ceiling((double)list.Count / 2));
+            
+            a = mergeSortPrice(a);
+            b = mergeSortPrice(b);
+
+            return merge(a, b); ;
         }
 
+        //merge two lists
         private List<ItemsModel> merge(List<ItemsModel> a, List<ItemsModel> b)
         {
             List<ItemsModel> merged = new List<ItemsModel>();
@@ -68,22 +89,28 @@ namespace ShopAid
             {
                 if (a.Count > 0 && b.Count > 0)
                 {
-                    if (a[1].Price < b[1].Price)
+                    if (a[0].Price <= b[0].Price)
                     {
                         merged.Add(a[0]);
                         a.RemoveAt(0);
                     }
-                        merged.Add(b[0]);
+                    
+                    merged.Add(b[0]);
+                    b.RemoveAt(0);
                 }
                 else if (a.Count > 0)
                 {
                     merged.Add(a[0]);
+                    a.RemoveAt(0);
                 }
                 else
                 {
                     merged.Add(b[0]);
+                    b.RemoveAt(0);
                 }
             }
+
+            return merged;
         }
 
         //closes the form
