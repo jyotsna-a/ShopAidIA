@@ -24,22 +24,6 @@ namespace ShopAid.Models
             setPriorities();
         }
 
-        //creates a label for an item
-        public static Label viewWishlist(ItemsModel i, int x, int y)
-        {
-            Label n = new Label();
-            n.Location = new Point(x,y);
-            n.AutoSize = true;
-            n.Text = i.Name + "     Priority: " + i.Priority.ToString() + "                   Price: " + i.Price.ToString();
-            return n;
-        }
-
-        //returns the items array
-        public static List<ItemsModel> itemsArray()
-        {
-            return items;
-        }
-
         //method to delete an item, returns a success/fail message
         public static string deleteItem(string name)
         {
@@ -91,14 +75,14 @@ namespace ShopAid.Models
 
         }
 
-        //updates priorities each time a change is made to the arraylist
-        public static void setPriorities()
+        public static bool checkBudget(double b)
         {
-            for (int item = 0; item < items.Count; item++)
+            if (b + sumPrices(items, items.Count) <= frmEdit.budget)
             {
-                items[item].setPriority(item + 1);
+                return true;
             }
 
+            return false;
         }
 
         public static double sumPrices(List<ItemsModel> i, int n)
@@ -111,17 +95,23 @@ namespace ShopAid.Models
             else
             {
                 return i[n - 1].Price + sumPrices(i, n - 1);
-            }         
+            }
         }
 
-        public static bool checkBudget(double b)
+        //returns the items array
+        public static List<ItemsModel> itemsArray()
         {
-            if (b + sumPrices(items, items.Count) <= frmEdit.budget)
+            return items;
+        }
+
+        //updates priorities each time a change is made to the arraylist
+        public static void setPriorities()
+        {
+            for (int item = 0; item < items.Count; item++)
             {
-                return true;
+                items[item].setPriority(item + 1);
             }
 
-            return false;
         }
     }
 }

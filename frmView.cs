@@ -36,20 +36,6 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
-        //closes the form
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Thread t = new Thread(new ThreadStart(ThreadHome));
-            t.Start();
-        }
-
-        private void ThreadHome()
-        {
-            //RUNs a NEW application with the desired form
-            Application.Run(new frmHome());
-        }
-
         private void btnOrderPriority_Click(object sender, EventArgs e)
         {
             items = WishListModel.itemsArray();
@@ -67,5 +53,52 @@ namespace ShopAid
             items = WishListModel.itemsArray();
 
         }
+
+        private List<ItemsModel> mergeSortPrice(List<ItemsModel> list)
+        {
+
+            return list;
+        }
+
+        private List<ItemsModel> merge(List<ItemsModel> a, List<ItemsModel> b)
+        {
+            List<ItemsModel> merged = new List<ItemsModel>();
+
+            while (a.Count > 0 || b.Count > 0)
+            {
+                if (a.Count > 0 && b.Count > 0)
+                {
+                    if (a[1].Price < b[1].Price)
+                    {
+                        merged.Add(a[0]);
+                        a.RemoveAt(0);
+                    }
+                        merged.Add(b[0]);
+                }
+                else if (a.Count > 0)
+                {
+                    merged.Add(a[0]);
+                }
+                else
+                {
+                    merged.Add(b[0]);
+                }
+            }
+        }
+
+        //closes the form
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Thread t = new Thread(new ThreadStart(ThreadHome));
+            t.Start();
+        }
+
+        private void ThreadHome()
+        {
+            //RUNs a NEW application with the desired form
+            Application.Run(new frmHome());
+        }
+
     }
 }
