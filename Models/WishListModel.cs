@@ -62,16 +62,25 @@ namespace ShopAid.Models
             //checks if an item was assigned to the temporary ItemsModel
             if (temp != null)
             {
+                int old = temp.Priority;
                 temp.Priority = p;
-                items.Insert((p - 1), temp);
-                setPriorities();
 
-                //returns success message
-                return "Priority changed.";
+                if (p <= items.Count)
+                {
+                    items.Insert((p - 1), temp);
+                    setPriorities();
+
+                    //returns success message
+                    return "Priority changed.";
+                }
+                else
+                {
+                    items.Insert((old - 1), temp);
+                }
             }
             
             //returns fail message
-            return "Item not found.";
+            return "Item not found or priority level not possible.";
 
         }
 
