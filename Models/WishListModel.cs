@@ -75,6 +75,7 @@ namespace ShopAid.Models
                 }
                 else
                 {
+                    temp.Priority = old;
                     items.Insert((old - 1), temp);
                 }
             }
