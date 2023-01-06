@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopAid.Models;
+using ShopAid.Processes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,9 @@ namespace ShopAid
 {
     public partial class frmLogin : Form
     {
+        int ID = 0;
+        List<CredentialsModel> credentials = new List<CredentialsModel>();
+
         public frmLogin()
         {
             InitializeComponent();
@@ -22,6 +27,8 @@ namespace ShopAid
         {
             this.CenterToScreen();
             this.SetControls();
+
+            credentials = CredentialsModel.GetCredentials();
         }
 
         private void SetControls()
@@ -35,6 +42,9 @@ namespace ShopAid
         //threads to homepage
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!this.ValidLogin())
+                return;
+
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadHome));
             t.Start();
@@ -43,7 +53,27 @@ namespace ShopAid
         private void ThreadHome()
         {
             //RUNs a NEW application with the desired form
-            Application.Run(new frmHome());
+            Application.Run(new frmHome(ID, credentials));
+        }
+
+        private bool ValidLogin()
+        {
+            //LINQ
+            var result = (from r in credentials
+                          where r.UserName == this.txtUsername.Text.Trim() &&
+                                r.Password == this.txtPassword.Text.Trim()
+                          select r).ToArray();
+
+            if (result.Count() == 0)
+            {
+                MessageBox.Show(this, "Login Failed. Username and/or Password is incorrect!", TitlesModel.MessageBoxTitle,
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            ID = result[0].ID;
+
+            return true;
         }
     }
 }

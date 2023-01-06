@@ -15,6 +15,7 @@ namespace ShopAid
     public partial class frmEdit : Form
     {
         public static double budget { get; set; }
+
         public frmEdit()
         {
             InitializeComponent();
