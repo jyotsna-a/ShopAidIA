@@ -14,11 +14,19 @@ namespace ShopAid
 {
     public partial class frmEdit : Form
     {
+        int ID = 0;
         public static double budget { get; set; }
 
         public frmEdit()
         {
             InitializeComponent();
+            ID = frmHome.getID();
+            int index;
+            for (int i = 0; i < BudgetModel.GetBudgets().Count; i++)
+            {
+
+            }
+            budget = BudgetModel.GetBudgets()[0].Budget;
         }
 
         //creates budget label to return to homepage
@@ -39,6 +47,7 @@ namespace ShopAid
             //checks validation
             if (!ValidateItems())
                 return;
+
             MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error); 
         }
 
@@ -48,10 +57,13 @@ namespace ShopAid
             bool passed = false;
 
             double temp = 0;
+            double old = budget;
 
             passed = double.TryParse(this.txtNew.Text.Trim(), out temp);
 
             budget = temp;
+
+            BudgetModel.EditBudgets(ID, old, budget);
 
 
             if (!passed)

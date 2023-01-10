@@ -14,10 +14,8 @@ namespace ShopAid
 {
     public partial class frmHome : Form
     {
-        int ID = 0;
+        public static int ID = 0;
         List<CredentialsModel> credentials;
-        List<BudgetModel> budgets = new List<BudgetModel>();
-        double actualBudget = 0;
 
         public frmHome()
         {
@@ -27,15 +25,19 @@ namespace ShopAid
         public frmHome(int id, List<CredentialsModel> c)
         {
             InitializeComponent();
-            this.ID = id;
+            ID = id;
             this.credentials = c;
+        }
+
+        public static int getID()
+        {
+            return ID;
         }
 
         private void frmHome_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
             this.SetControls();
-            frmEdit.budget = actualBudget;
             this.Controls.Add(frmEdit.createLabel());
         }
 
@@ -45,20 +47,6 @@ namespace ShopAid
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-
-            this.BudgetData();
-        }
-
-        private void BudgetData()
-        {
-            //Budgets
-            budgets = BudgetModel.GetBudgets();
-
-            var b = (from c in budgets
-                     where c.ID == ID
-                     select c.Budget).ToArray();
-
-            actualBudget = b[0];
         }
 
         //threads to add page
