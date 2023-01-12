@@ -27,20 +27,9 @@ namespace ShopAid.Models
 
             string dir = CurrentPath.GetDbasePath() + "\\Budget.txt";
 
-            using (StreamReader reader = new StreamReader(File.OpenRead(dir)))
-            {
-                string fileContent = reader.ReadToEnd();
-
-                reader.Close();
-
-                fileContent = fileContent.Replace(current, newVal);
-
-                StreamWriter writer = new StreamWriter(File.OpenWrite(dir));
-
-                writer.Write(fileContent);
-
-                writer.Close();
-            }
+            string[] lines = System.IO.File.ReadAllLines(dir);
+            lines[id - 1] = newVal;
+            System.IO.File.WriteAllLines(dir, lines);
         }
     }
 }

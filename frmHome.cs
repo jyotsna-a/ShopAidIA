@@ -24,9 +24,20 @@ namespace ShopAid
 
         public frmHome(int id, List<CredentialsModel> c)
         {
+            double budget = 0;
             InitializeComponent();
             ID = id;
             this.credentials = c;
+            List<BudgetModel> budgets = BudgetModel.GetBudgets();
+            for (int i = 0; i < BudgetModel.GetBudgets().Count; i++)
+            {
+                if (budgets[i].ID == ID)
+                {
+                    budget = budgets[i].Budget;
+                }
+            }
+
+            frmEdit.budget = budget;
         }
 
         public static int getID()

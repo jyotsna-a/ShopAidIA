@@ -21,12 +21,6 @@ namespace ShopAid
         {
             InitializeComponent();
             ID = frmHome.getID();
-            int index;
-            for (int i = 0; i < BudgetModel.GetBudgets().Count; i++)
-            {
-
-            }
-            budget = BudgetModel.GetBudgets()[0].Budget;
         }
 
         //creates budget label to return to homepage
