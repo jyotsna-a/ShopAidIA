@@ -92,7 +92,6 @@
     <Compile Include="Models\CredentialsModel.cs" />
     <Compile Include="Models\ItemsModel.cs" />
     <Compile Include="Models\TitlesModel.cs" />
-    <Compile Include="Processes\BudgetInputOutput.cs" />
     <Compile Include="Processes\CurrentPath.cs" />
     <Compile Include="Processes\WishList.cs" />
     <Compile Include="Processes\CredentialInputOutput.cs" />
