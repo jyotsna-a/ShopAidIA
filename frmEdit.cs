@@ -68,7 +68,7 @@ namespace ShopAid
             }
 
             //validates if budget is enough for current items
-            if (!WishListModel.checkBudget(0))
+            if (!WishList.checkBudget(0))
             {
                 MessageBox.Show(this, "Budget is too low for current wishlist. Please delete items.", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);

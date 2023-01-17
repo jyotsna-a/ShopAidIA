@@ -88,13 +88,13 @@
     <Compile Include="frmView.Designer.cs">
       <DependentUpon>frmView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\WishListModel.cs" />
     <Compile Include="Models\BudgetModel.cs" />
     <Compile Include="Models\CredentialsModel.cs" />
     <Compile Include="Models\ItemsModel.cs" />
     <Compile Include="Models\TitlesModel.cs" />
     <Compile Include="Processes\CurrentPath.cs" />
     <Compile Include="Processes\WishList.cs" />
-    <Compile Include="Processes\CredentialInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdd.resx">

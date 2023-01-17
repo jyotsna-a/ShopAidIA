@@ -33,10 +33,8 @@ namespace ShopAid
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOrderPriority = new System.Windows.Forms.Button();
             this.dgWishlist = new System.Windows.Forms.DataGridView();
-            this.clmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPriority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnOrderPrice = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgWishlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,30 +76,14 @@ namespace ShopAid
             // 
             // dgWishlist
             // 
+            this.dgWishlist.AllowUserToAddRows = false;
+            this.dgWishlist.AllowUserToDeleteRows = false;
             this.dgWishlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgWishlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmName,
-            this.clmPriority,
-            this.clmPrice});
             this.dgWishlist.Location = new System.Drawing.Point(26, 64);
             this.dgWishlist.Name = "dgWishlist";
-            this.dgWishlist.Size = new System.Drawing.Size(335, 150);
+            this.dgWishlist.ReadOnly = true;
+            this.dgWishlist.Size = new System.Drawing.Size(342, 150);
             this.dgWishlist.TabIndex = 25;
-            // 
-            // clmName
-            // 
-            this.clmName.HeaderText = "Name";
-            this.clmName.Name = "clmName";
-            // 
-            // clmPriority
-            // 
-            this.clmPriority.HeaderText = "Priority";
-            this.clmPriority.Name = "clmPriority";
-            // 
-            // clmPrice
-            // 
-            this.clmPrice.HeaderText = "Price";
-            this.clmPrice.Name = "clmPrice";
             // 
             // btnOrderPrice
             // 
@@ -116,12 +98,27 @@ namespace ShopAid
             this.btnOrderPrice.UseVisualStyleBackColor = false;
             this.btnOrderPrice.Click += new System.EventHandler(this.btnOrderPrice_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnDelete.Location = new System.Drawing.Point(26, 231);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(86, 23);
+            this.btnDelete.TabIndex = 27;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(584, 311);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnOrderPrice);
             this.Controls.Add(this.dgWishlist);
             this.Controls.Add(this.btnOrderPriority);
@@ -142,9 +139,7 @@ namespace ShopAid
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnOrderPriority;
         private System.Windows.Forms.DataGridView dgWishlist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPriority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmPrice;
         private System.Windows.Forms.Button btnOrderPrice;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -50,7 +50,7 @@ namespace ShopAid
             Application.Run(new frmHome());
         }
 
-        //creates an item, validates, and calls add method in WishListModel
+        //creates an item, validates, and calls add method in WishList
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!ValidateItems())
@@ -62,7 +62,7 @@ namespace ShopAid
 
             //creates item using user input
             ItemsModel i = new ItemsModel(name, p, priority);
-            WishListModel.addItem(i);
+            WishList.addItem(i);
 
             MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -91,7 +91,7 @@ namespace ShopAid
 
             //validate Price fits budget
             double db = price;
-            if (!WishListModel.checkBudget(double.Parse(this.txtPrice.Text.Trim())))
+            if (!WishList.checkBudget(double.Parse(this.txtPrice.Text.Trim())))
             {
                 MessageBox.Show(this, "This price exceeds your budget!", TitlesModel.MessageBoxTitle,
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -8,13 +8,18 @@ using System.Windows.Forms;
 
 namespace ShopAid.Models
 {
-    public class WishListModel
+    public class WishList
     {
         public static List<ItemsModel> items = new List<ItemsModel>();
 
-        public WishListModel()
+        public WishList()
         {
 
+        }
+
+        public static void setItems(List<ItemsModel> i)
+        {
+            items = i;
         }
 
         //adds an item to the items arraylist

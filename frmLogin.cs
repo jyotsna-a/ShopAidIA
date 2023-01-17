@@ -17,6 +17,7 @@ namespace ShopAid
     {
         int ID = 0;
         List<CredentialsModel> credentials = new List<CredentialsModel>();
+        List<ItemsModel> loadedItems = new List<ItemsModel>();
 
         public frmLogin()
         {
@@ -72,6 +73,8 @@ namespace ShopAid
             }
 
             ID = result[0].ID;
+            loadedItems = WishListModel.GetWishList(ID);
+            WishList.setItems(loadedItems);
 
             return true;
         }

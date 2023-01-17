@@ -35,7 +35,7 @@ namespace ShopAid
             this.MinimizeBox = false;
         }
 
-        // validates item and calls delete method in WishListModel
+        // validates item and calls delete method in WishList
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (!ValidateItems())
@@ -45,7 +45,7 @@ namespace ShopAid
             string name = this.txtName.Text.Trim();
 
             //deletes item and returns success/failure message
-            string msg = WishListModel.deleteItem(name);
+            string msg = WishList.deleteItem(name);
             MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

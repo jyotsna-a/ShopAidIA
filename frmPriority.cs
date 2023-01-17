@@ -30,7 +30,7 @@ namespace ShopAid
             int p = (int)numNewPriority.Value;
 
             //changes priority and returns success/fail message
-            string msg = WishListModel.changePriority(name, p);
+            string msg = WishList.changePriority(name, p);
             MessageBox.Show(this, msg, TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
