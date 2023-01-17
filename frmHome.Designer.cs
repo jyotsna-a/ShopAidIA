@@ -74,23 +74,17 @@ namespace ShopAid
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDelete.Location = new System.Drawing.Point(362, 135);
+            this.btnDelete.Location = new System.Drawing.Point(0, 0);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(122, 23);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "DELETE ITEM";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
             // 
             // btnPriority
             // 
             this.btnPriority.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPriority.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriority.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnPriority.Location = new System.Drawing.Point(362, 164);
+            this.btnPriority.Location = new System.Drawing.Point(362, 135);
             this.btnPriority.Name = "btnPriority";
             this.btnPriority.Size = new System.Drawing.Size(122, 23);
             this.btnPriority.TabIndex = 4;
@@ -103,7 +97,7 @@ namespace ShopAid
             this.btnView.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnView.Location = new System.Drawing.Point(362, 193);
+            this.btnView.Location = new System.Drawing.Point(362, 164);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(122, 23);
             this.btnView.TabIndex = 5;
@@ -117,7 +111,7 @@ namespace ShopAid
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEdit.Location = new System.Drawing.Point(362, 222);
+            this.btnEdit.Location = new System.Drawing.Point(362, 193);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(122, 23);
             this.btnEdit.TabIndex = 6;

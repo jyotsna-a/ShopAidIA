@@ -28,17 +28,12 @@ namespace ShopAid
         {
             this.CenterToScreen();
             this.SetControls();
-            items = WishList.itemsArray();
+
             dgWishlist.Columns.Add("Name", "Name");
             dgWishlist.Columns.Add("Price", "Price");
             dgWishlist.Columns.Add("Priority", "Priority");
 
-            foreach (ItemsModel i in items)
-            {
-                Object[] row = new Object[] { i.Name, i.Price, i.Priority };
-                dgWishlist.Rows.Add(row);
-            }
-            //this.GetWishList();
+            this.SetWishList();
         }
 
         private void SetControls()
@@ -48,13 +43,6 @@ namespace ShopAid
             this.MaximizeBox = false;
             this.MinimizeBox = false;
         }
-
-        /*private void GetWishList()
-        {
-            wishlist = WishListModel.GetWishList();
-
-            this.SetWishList();
-        }*/
 
         private void btnOrderPriority_Click(object sender, EventArgs e)
         {
@@ -177,8 +165,14 @@ namespace ShopAid
 
         private void SetWishList()
         {
-            this.dgWishlist.DataSource = null;
-            this.dgWishlist.DataSource = items;
+            dgWishlist.Rows.Clear();
+            items = WishList.itemsArray();
+
+            foreach (ItemsModel i in items)
+            {
+                Object[] row = new Object[] { i.Name, i.Price, i.Priority };
+                dgWishlist.Rows.Add(row);
+            }
         }
     }
 }

@@ -29,24 +29,6 @@ namespace ShopAid.Models
             setPriorities();
         }
 
-        //method to delete an item, returns a success/fail message
-        public static string deleteItem(string name)
-        {
-            //checks if item is in array
-            foreach (ItemsModel i in items)
-            {
-                if (i.Name.Equals(name))
-                {
-                    items.Remove(i);
-                    setPriorities();
-                    return "Item deleted";
-                }
-            }
-
-            //returns fail message
-            return "Item not found";
-        }
-
         //changes the priority of an item
         public static string changePriority(string name, int p)
         {

@@ -74,20 +74,6 @@ namespace ShopAid
             Application.Run(new frmAdd());
         }
 
-        //threads to the delete page
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Thread t = new Thread(new ThreadStart(ThreadDelete));
-            t.Start();
-        }
-
-        private void ThreadDelete()
-        {
-            //runs a new form
-            Application.Run(new frmDelete());
-        }
-
         //threads to priority page
         private void btnPriority_Click(object sender, EventArgs e)
         {
