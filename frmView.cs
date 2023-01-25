@@ -173,6 +173,8 @@ namespace ShopAid
                 Object[] row = new Object[] { i.Name, i.Price, i.Priority };
                 dgWishlist.Rows.Add(row);
             }
+
+            WishListModel.EditWishlist(items, frmHome.getID());
         }
     }
 }

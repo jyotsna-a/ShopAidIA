@@ -34,7 +34,7 @@ namespace ShopAid.Models
                             if (int.Parse(value[0]) == ID)
                             {
                                 //Add data to the Wishlist Model
-                                wishlists.Add(new ItemsModel(value[1], double.Parse(value[3]), int.Parse(value[2])));
+                                wishlists.Add(new ItemsModel(value[1], double.Parse(value[2]), int.Parse(value[3])));
                             }    
                         }
                     }
@@ -52,17 +52,35 @@ namespace ShopAid.Models
              return wishlists;
         }
 
-        public static void EditWishlist(int id, double oldB, double newB)
+        public static void EditWishlist(List<ItemsModel> list, int ID)
         {
-            string current = id.ToString() + "|" + oldB.ToString();
-            
-            string newVal = id.ToString() + "|" + newB.ToString();
-
             string dir = CurrentPath.GetDbasePath() + "\\WishList.txt";
 
-            string[] lines = System.IO.File.ReadAllLines(dir);
-            lines[id - 1] = newVal;
-            System.IO.File.WriteAllLines(dir, lines);
+            string[] oldFile = System.IO.File.ReadAllLines(dir);         
+
+            for (int a = 0; a < oldFile.Length; a++)
+            {
+                string[] current = oldFile[a].Split('|');
+
+                if (int.Parse(current[0]) == ID)
+                {
+                    oldFile[a] = "";
+                }
+            }
+
+            System.IO.File.WriteAllLines(dir, oldFile);
+
+            using (StreamWriter sw = File.AppendText(dir))
+            {
+                for (int j = 0; j < list.Count; j++)
+                {
+                    string add = ID.ToString() + "|" + list[j].Name + "|" + list[j].Price.ToString() + "|" + list[j].Priority.ToString();
+                    sw.WriteLine(add);
+                }
+            }
+
+            var lines = File.ReadAllLines(dir).Where(arg => !string.IsNullOrWhiteSpace(arg));
+            File.WriteAllLines(dir, lines);
         }
     }
 }

@@ -44,7 +44,20 @@ namespace ShopAid
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (!this.ValidLogin())
-                return;
+            {
+                DialogResult dr = MessageBox.Show(this, "Would you like to register?", TitlesModel.MessageBoxTitle,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                if (dr == DialogResult.OK)
+                {
+                    CredentialsModel.EditCredentials(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim());
+                }
+                else
+                {
+                    return;
+                }
+            }   
+
 
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadHome));

@@ -42,7 +42,7 @@ namespace ShopAid
             if (!ValidateItems())
                 return;
 
-            MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error); 
+            MessageBox.Show(this, "Budget updated.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk); 
         }
 
         private bool ValidateItems()
@@ -57,7 +57,7 @@ namespace ShopAid
 
             budget = temp;
 
-            BudgetModel.EditBudgets(ID, old, budget);
+            BudgetModel.EditBudgets(ID, budget);
 
 
             if (!passed)

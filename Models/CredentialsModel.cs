@@ -68,5 +68,30 @@ namespace ShopAid.Models
             return credentials;
         }
 
+        public static void EditCredentials(string uName, string pWord)
+        {
+            string dir = CurrentPath.GetDbasePath() + "\\Credentials.txt";
+
+            //find lowest ID number available
+            string[] lines = System.IO.File.ReadAllLines(dir);
+            string[] last = lines[lines.Length - 1].Split('|');
+            int lastID = int.Parse(last[0]);
+            int id = lastID + 1;
+
+            string newUser = id.ToString() + "|" + uName + "|" + pWord;
+
+            using (StreamWriter sw = File.AppendText(dir))
+            {
+                sw.WriteLine(newUser);
+            }
+
+            string budgetDir = CurrentPath.GetDbasePath() + "\\Budget.txt";
+            string budget = id.ToString() + "|" + "0";
+
+            using (StreamWriter sw = File.AppendText(budgetDir))
+            {
+                sw.WriteLine(budget);
+            }
+        }
     }
 }

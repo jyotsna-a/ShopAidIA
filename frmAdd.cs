@@ -64,7 +64,7 @@ namespace ShopAid
             ItemsModel i = new ItemsModel(name, p, priority);
             WishList.addItem(i);
 
-            MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(this, "Item added.", TitlesModel.MessageBoxTitle, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private bool ValidateItems()

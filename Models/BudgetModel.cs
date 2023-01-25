@@ -54,10 +54,8 @@ namespace ShopAid.Models
              return budgets;
         }
 
-        public static void EditBudgets(int id, double oldB, double newB)
-        {
-            string current = id.ToString() + "|" + oldB.ToString();
-            
+        public static void EditBudgets(int id, double newB)
+        {           
             string newVal = id.ToString() + "|" + newB.ToString();
 
             string dir = CurrentPath.GetDbasePath() + "\\Budget.txt";
