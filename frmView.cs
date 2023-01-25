@@ -156,9 +156,7 @@ namespace ShopAid
 
             items.RemoveAll(x => x.Name == gName && x.Price == gPrice && x.Priority == gPriority);
 
-            //Messagebox delete successful
-
-            //Modified WishList what happens to the Wishlist.txt file now?
+            WishList.setPriorities();
 
             this.SetWishList();
         }
