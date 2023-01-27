@@ -40,11 +40,6 @@ namespace ShopAid
             frmEdit.budget = budget;
         }
 
-        public static int getID()
-        {
-            return ID;
-        }
-
         private void frmHome_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();

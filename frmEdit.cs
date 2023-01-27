@@ -20,7 +20,7 @@ namespace ShopAid
         public frmEdit()
         {
             InitializeComponent();
-            ID = frmHome.getID();
+            ID = frmLogin.getID();
         }
 
         //creates budget label to return to homepage

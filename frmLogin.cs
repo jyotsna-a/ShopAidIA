@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,7 +16,7 @@ namespace ShopAid
 {
     public partial class frmLogin : Form
     {
-        int ID = 0;
+        public static int ID = 0;
         List<CredentialsModel> credentials = new List<CredentialsModel>();
         List<ItemsModel> loadedItems = new List<ItemsModel>();
 
@@ -46,11 +47,11 @@ namespace ShopAid
             if (!this.ValidLogin())
             {
                 DialogResult dr = MessageBox.Show(this, "Would you like to register?", TitlesModel.MessageBoxTitle,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Question);
+                                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (dr == DialogResult.OK)
                 {
-                    CredentialsModel.EditCredentials(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim());
+                    ID = CredentialsModel.EditCredentials(this.txtUsername.Text.Trim(), this.txtPassword.Text.Trim());
                 }
                 else
                 {
@@ -62,6 +63,11 @@ namespace ShopAid
             this.Close();
             Thread t = new Thread(new ThreadStart(ThreadHome));
             t.Start();
+        }
+
+        public static int getID()
+        {
+            return ID;
         }
 
         private void ThreadHome()

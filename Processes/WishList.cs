@@ -64,6 +64,7 @@ namespace ShopAid.Models
                 {
                     temp.Priority = old;
                     items.Insert((old - 1), temp);
+                    return "Priority changed.";
                 }
             }
             

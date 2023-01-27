@@ -68,7 +68,7 @@ namespace ShopAid.Models
             return credentials;
         }
 
-        public static void EditCredentials(string uName, string pWord)
+        public static int EditCredentials(string uName, string pWord)
         {
             string dir = CurrentPath.GetDbasePath() + "\\Credentials.txt";
 
@@ -85,13 +85,7 @@ namespace ShopAid.Models
                 sw.WriteLine(newUser);
             }
 
-            string budgetDir = CurrentPath.GetDbasePath() + "\\Budget.txt";
-            string budget = id.ToString() + "|" + "0";
-
-            using (StreamWriter sw = File.AppendText(budgetDir))
-            {
-                sw.WriteLine(budget);
-            }
+            return id;
         }
     }
 }

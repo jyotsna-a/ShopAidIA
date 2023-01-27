@@ -15,7 +15,6 @@ namespace ShopAid
     public partial class frmView : Form
     {
         public List<ItemsModel> items;
-        //public List<WishListModel> wishlist = new List<WishListModel>();
 
 
         public frmView()
@@ -172,7 +171,7 @@ namespace ShopAid
                 dgWishlist.Rows.Add(row);
             }
 
-            WishListModel.EditWishlist(items, frmHome.getID());
+            WishListModel.EditWishlist(items, frmLogin.getID());
         }
     }
 }
