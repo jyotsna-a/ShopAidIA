@@ -68,7 +68,10 @@ namespace ShopAid
             }
         }
 
-        //recursive merge sort: https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-7.php#:~:text=Conceptually%2C%20a%20merge%20sort%20works,will%20be%20the%20sorted%20list.
+        /* recursive merge sort source:
+        C# - merge sort (2022) w3resource. Available at: 
+        https://www.w3resource.com/csharp-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-7.php#:~:text=Conceptually%2C%20a%20merge%20sort%20works,will%20be%20the%20sorted%20list. (Accessed: January 23, 2023). 
+        */
         private List<ItemsModel> mergeSortPrice(List<ItemsModel> list)
         {
             if (list.Count <= 1)

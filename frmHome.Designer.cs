@@ -32,7 +32,6 @@ namespace ShopAid
             this.lblHome = new System.Windows.Forms.Label();
             this.lblBudget = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnPriority = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -71,13 +70,6 @@ namespace ShopAid
             this.btnAdd.Text = "ADD ITEM";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(0, 0);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 7;
             // 
             // btnPriority
             // 
@@ -128,7 +120,6 @@ namespace ShopAid
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnPriority);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.lblHome);
@@ -145,7 +136,6 @@ namespace ShopAid
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnPriority;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnEdit;
