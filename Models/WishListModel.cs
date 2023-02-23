@@ -58,6 +58,7 @@ namespace ShopAid.Models
 
             string[] oldFile = System.IO.File.ReadAllLines(dir);         
 
+            //empties all the lines that are part of the user's original wishlist
             for (int a = 0; a < oldFile.Length; a++)
             {
                 string[] current = oldFile[a].Split('|');
@@ -72,6 +73,7 @@ namespace ShopAid.Models
 
             using (StreamWriter sw = File.AppendText(dir))
             {
+                //adds each element of the user's updated wishlist to the WishList text file in the correct format
                 for (int j = 0; j < list.Count; j++)
                 {
                     string add = ID.ToString() + "|" + list[j].Name + "|" + list[j].Price.ToString() + "|" + list[j].Priority.ToString();
@@ -79,7 +81,7 @@ namespace ShopAid.Models
                 }
             }
 
-            var lines = File.ReadAllLines(dir).Where(arg => !string.IsNullOrWhiteSpace(arg));
+            var lines = File.ReadAllLines(dir).Where(line => !string.IsNullOrWhiteSpace(line));
             File.WriteAllLines(dir, lines);
         }
     }

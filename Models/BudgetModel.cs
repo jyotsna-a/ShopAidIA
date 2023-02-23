@@ -56,16 +56,19 @@ namespace ShopAid.Models
 
         public static void EditBudgets(int id, double newB)
         {           
+            //creates a string in the correct format of the text file
             string newVal = id.ToString() + "|" + newB.ToString();
 
             string dir = CurrentPath.GetDbasePath() + "\\Budget.txt";
 
+            //creates an array of strings containing all the lines of the Budget text file
             string[] oldFile = System.IO.File.ReadAllLines(dir);
 
             for (int a = 0; a < oldFile.Length; a++)
             {
                 string[] current = oldFile[a].Split('|');
 
+                //sets the line matching the user's ID to an empty string
                 if (int.Parse(current[0]) == id)
                 {
                     oldFile[a] = "";
@@ -74,12 +77,13 @@ namespace ShopAid.Models
 
             System.IO.File.WriteAllLines(dir, oldFile);
 
+            //adds a new line to the text file with the user's updated budget
             using (StreamWriter sw = File.AppendText(dir))
             {
                 sw.WriteLine(newVal);
             }
 
-            var lines = File.ReadAllLines(dir).Where(arg => !string.IsNullOrWhiteSpace(arg));
+            var lines = File.ReadAllLines(dir).Where(line => !string.IsNullOrWhiteSpace(line));
             File.WriteAllLines(dir, lines);
         }
     }
